@@ -1,0 +1,40 @@
+\chapter{Software Architektur}
+
+\section{Logische Sicht}
+Das System besteht aus prim"ar 4 Schichten (3  Schichten - Architektur plus Netzwerk). Diese beinhalten:
+\begin{description}
+\item[Schicht 1] Graphisches User Interface (GUI)
+\item[Schicht 2] Problem Domain (PD)
+\item[Schicht 3] Datenhaltung (DH)
+\item[Schicht 4] Netzwerk (bestehend aus Client und Server)
+\end{description}
+
+Diese Architektur haben wir gew"ahlt um eine klare Trennung zwischen den einzelnen Programmteilen zu erreichen. \\
+Das graphische User Interface ist die Schnittstelle zum Benutzer. "Uber dieses kann er Eingaben machen oder in unserem Fall erfolgt die Steuerung
+der Spielfigur "uber das GUI. \\
+Die PD ist die Schnittstelle zwischen GUI und DH. Das heisst sie bekommt und verarbeitet Befehle vom GUI, schreibt Daten in die DH und
+ruft Funktionen in der Netzwerkschicht auf. \\
+Die Datenhaltung ist daf"ur zust"andig, Daten, die konsistent sein m"ussen zu speichern, damit sie bei einem Neustarten des Spiels wieder
+zur Verf"ugung stehen. \\
+Die Netzwerkschicht regelt die Daten"ubertragung zwischen dem Server und den Clients.
+
+\section{Prozess}
+
+
+\subsection{Netzwerk}
+Das Netzwerk besteht aus einem Server und bis zu vier Clients die miteinander kommunizieren. Dabei kann jeder Client auch Server sein, das heisst
+zu Beginn des Spiels entscheidet der Spieler, ob er Server und Client oder nur Client ist. Es kann nur ein Spieler Server sein.
+Ist ein Spieler Server und Client, werden die Daten der Mitspieler zu ihm "ubermittelt. Das geschieht folgendermassen: \\
+Alle 20\(ms\) wird die aktuelle Bewegung eines Clients, also eines Spielers zum Server "ubermittelt. Diese Daten werden vom Server
+entgegengenommen und \textit{allen} Clients "ubermittelt. Das heisst auch dem Client, der als Server fungiert. Damit k"onnen alle
+Clients die Bewegung der Mitspieler berechnen und haben somit die aktuelle Position. Zus"atzlich zur Bewegungsrichtung wird noch
+"ubermittelt, ob ein Spieler eine Bombe gelegt hat und wenn ja, wo sich diese befindet. Zus"atzlich zu dieser "Ubertragung wird alle 100\(ms\) die
+aktuelle Position des Clients zum Server "ubermittelt. Das heisst nicht nur die Bewegungsrichtung, sondern die tats"achliche Position.
+Diese Daten werden ebenfalls von jedem Client an den Server "ubermittelt und gleich wie vorher schickt der Server diese Daten an alle
+Clients zur"uck. Damit verhindern wir allf"allige Ungenauigkeiten bzw. wir k"onnen damit den Fehler beheben, der durch zeitliche Verz"ogerungen
+entsteht. Damit wir die zeitliche Verz"ogerung an sich in den Griff kriegen, senden wir alle 200\(ms\) einen Ping an jeden Client. Mit der Zeit,
+die uns dieser Ping liefert, kann der Server feststellen, um wieviel sich die Position des Clients seit dem versenden seiner Position ge"andert hat.
+\\ Mit der Tatsache, dass kein Client seine Spielposition selber berechnet erreichen wir faire Bedingungen falls die "Ubertragungsgeschwindigkeit
+zwischen den einzelnen Clients und dem Server unterschiedlich sein sollte.
+
+

@@ -1,0 +1,77 @@
+\documentclass[a4paper]{article}
+%Pakete auswaehlen
+\usepackage{german}
+\usepackage[latin1]{inputenc}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{graphics}
+\usepackage{hyperref}
+
+\begin{document}
+\title{CVS Zusammenfassung}
+\author{Michael Egli}
+\date{}
+\maketitle
+
+\begin{abstract}
+Diese Zusammenfassung gilt, wenn ein Projekt auf \href{www.sourceforge.net}{www.sourceforge.net} verwaltet wird.
+Konventionen f"ur diese Zusammenfassung:
+\end{abstract}
+
+\begin{itemize}
+\item name steht f"ur den bei sourceforge angemeldeten Benutzernamen
+\item projektname steht f"ur das bie sourceforge angemeldeten Projekt
+\item directory steht f"ur das Verzeichnis, welches auf dem CVS Server ist.
+\end{itemize}
+
+\section{Voreinstellungen}
+Wenn man sich bei sourceforge angemeldet hat, muss man sich als erstes mit ssh ins home directory
+mit folgendem Befehl einloggen: \textit{ssh -l name projektname.sourceforge.net}
+
+Im file ~/.bashrc folgendes eintragen:
+\begin{itemize}
+\item export CVS\_RSH=ssh
+\item export CVSROOT=:ext:name@cvs.projektname.sourceforge.net:/cvsroot/projektname
+\end{itemize}
+Anschliessend die bash neu starten oder den PC neu booten, damit die "Anderungen "ubernommen werden.
+
+Optional kann auch ein key erstellt werden. Das geschieht mit OpenSSH mit dem Befehl: \textit{ssh-keygen -t dsa}. Dieser Befehl
+erzeugt einen ssh2 Key. (Es funktionieren auch ssh1 keys auf sourceforge).
+DieserKey kann anschliessend auf der pers"onlichen account Seite raufgeladen werden. Das hat den Vorteil, dass man nicht immer
+das Passwort eingeben muss.
+
+\section{Projekt erstellen und importieren}
+Zuerst wird ein Projekt erstellt (z.B. in Kdevelop). Da nur diese Verzeichnisse importiert werden sollen, die auch ge"andert werden,
+das heisst ohne die generierten files, wechselt man in das Verzeichnis, das importiert werden soll.
+Anschliessen kann mit dem Befehl \textit{cvs import directory vendor start} das Verzeichnis auf den CVS Server geladen werden. Dabei
+ist directory der Name, wie er auf dem CVS Server heissen soll, \textit{nicht!} wie der Name des lokalen Verzeichnisses. <vendor>
+ist irgendwas (spielt keine Rolle).
+
+\section{Arbeiten mit CVS}
+Um mit CVS arbeiten zu k"onnen muss zuerst das Verzeichnis vom CVS Server geladen werden. Hierzu dient der Befehl
+\textit{cvs co directory}. Am besten legt man daf"ur ein neues Projektverzeichnis an, in dem fortan gearbeitet werden soll.
+Verhindert werden muss auf jeden Fall, dass es das Verzeichnis lokal schon gibt, das heisst, wenn man das Projekt lokal erstellt hat
+und es anschliessend auf den CVS Server geladen wird, muss dieses Verzeichnis zuerst gel"oscht und anschliessen
+mit checkout wieder erstellt werden.
+
+Zuerst sollte immer eine aktuelle Version (mit \textit{cvs up}) geholt werden. Dann k"onnen die files editiert werden. Wenn
+das editieren abgeschlossen ist, kann wieder mit \textit{cvs up} gepr"uft werden welche Files sich ge"andert haben und anschliessend
+kann mit \textit{cvs ci} die "Anderungen auf den CVS Server gespielt werden.
+
+Fall neue Files oder Directories hinzugef"ugt werden sollen, muss dieses Directory zuerst erstellt werden. Anschliessend mit dem Befehl
+\textit{cvs add file} und \textit{cvs ci file} wird das file oder directory auf den Server "ubertragen. Danach wieder mit \textit{cvs up}
+das lokale Verzeichnis oder file auf den neuesten Stand bringen.
+
+\section{Befehls"ubersicht}
+
+$
+\begin{array}{l l}
+$cvs import directory vendor start$ & $Source Code ins CVS importieren$ \\
+$cvs co <directory>$  & $Projekt auschecken (das wird nur einmal am Anfang gemacht)$ \\
+$cvs up$ & $Update, "uberpr"ft "Anderungen die lokal gemacht wurden$ \\
+$cvs ci$ & $Commit, "ubertr"agt die "Anderungen ins CVS$ \\
+$cvs add file$ & $f"ugt dem CVS ein neues file oder directory hinzu$ \\
+\end{array}
+$
+
+\end{document}

@@ -1,0 +1,44 @@
+Protokoll 30.5.02 (Nachträglich verfasst)
+=================
+
+Nächster Termin: 10.10h Meeting mit D.Keller 6.5.02
+===============
+- Dokumentation Iteration 2, Vollständig!!!
+
+Allgemeine Info
+===============
+Wichtigste Punkte der Zwischenbewertung:
+- Projektplan zu spät/ungenügend
+- keine Soll/Ist Vergleich
+- User Manual
+- Keine Kommentare zu Funktionen
+
+
+
+Zu Erledigen
+============
+
+- [MIE] wie kommt Client an seine Daten?
+- [UHEI] Funktionen beschreiben
+- [UHEI] Verantwortlich Design
+- [REH] Verantwortlich Analyse
+- [MIE] Test Strategie (falls Zeit)
+        Sonst ein paar Ideen notieren zum Zeigen
+- [alle] Produziert Dokumentation zu den Teilen die
+         ihr implementiert habt:Seq.Diagr./PrototkollSpezi/Klassendiagramme
+- [REH] Message Fkt in Schnittstelle definieren +disconnect
+- [MIE] Ein close() im client
+
+
+Mögliche Zeitengpässe durch
+===========================
+[alle]     Di: Prüfung Computeralgebra
+[STEK/REH] Fr: Abgabe Physik Projekt(Bericht & Programm)
+
+
+Abwesenheiten
+=============
+[REH] Mittwoch/Donnerstag ab 18.00h
+
+
+

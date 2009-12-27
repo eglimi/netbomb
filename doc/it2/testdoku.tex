@@ -1,0 +1,223 @@
+\chapter{Abschlusstest}
+\begin{tabular}{p{30mm}p{70mm}}
+Durchgef"uhrt am: &  11.7.2002 \\
+Tester          : &  U. Heimann  \\
+
+\end{tabular}
+\linebreak
+
+\section{Normaler Spielablauf}
+
+\subsection{Spiel starten als Server}
+\begin{tabular}{|p{50mm}|p{70mm}|p{20mm}|}
+\hline
+\textbf{Aktion} & \textbf{Erwartetes Ergebnis} & \textbf{Ergebnis}  \\
+\hline
+Programm von der Konsole aus Starten.  &
+Programm startet, GUI wird angezeigt.  &
+OK \\
+\hline
+Spielername im Dialog 'Spieleinstellungen' setzen, mit '"Ubernehmen' best"atigen.  &
+Name wird "ubernommen (nicht sichtbar), Dialog verschwindet.  &
+OK  \\
+\hline
+Netzwerkserver starten, 'Netzwerk $\rightarrow$  Spielserver starten...'  &
+Dialog 'Server starten' erscheint.  &
+OK  \\
+\hline
+Mit 'Starten' den Server starten.  &
+Server wird gestartet (nicht sichtbar), der Spieler wird am eigenen Server mit dem eingegebenen Namen
+  angemeldet. Es erscheint ein Dialog der die Verbindung best"atigt. Der eingegebene Name erscheint
+  zuoberst in der Playerliste.  &
+OK \\
+\hline
+Warten bis sich ein weiterer Spieler angemeldet hat.  &
+Der Name des anderen Spielers erscheint in der Playerliste.  &
+OK  \\
+\hline
+Mit 'Spiel $\rightarrow$ Neues Spiel..' das Spiel starten.  &
+Spielumgebung wird erstellt. Spielfelddaten werden "ubermittelt. Das Spielfeld wird angezeigt.
+  Wenn s"amtliche Spieler bereit sind wird das Spiel freigegeben.  &
+OK  \\
+\hline
+\end{tabular}
+
+\subsection{Spiel starten als Client}
+\begin{tabular}{|p{50mm}|p{70mm}|p{20mm}|}
+\hline
+\textbf{Aktion} & \textbf{Erwartetes Ergebnis} & \textbf{Ergebnis}  \\
+\hline
+Programm von der Konsole aus Starten.  &
+Programm startet, GUI wird angezeigt.  &
+OK \\
+\hline
+Spielername im Dialog 'Spieleinstellungen' setzen, mit '"Ubernehmen' best"atigen.  &
+Name wird "ubernommen (nicht sichtbar), Dialog verschwindet.  &
+OK  \\
+\hline
+An einem Server anmelden, 'Netzwerk $\rightarrow$ Spielserver anmelden...'  &
+Dialog 'Server anmelden' erscheint.  &
+OK  \\
+\hline
+IP Adresse des Servers eingeben und mit 'Anmelden' best"atigen.  &
+Der Spieler wird am Server mit dem eingegebenen Namen angemeldet. Es erscheint ein Dialog der die
+  Verbindung best"atigt. Der eingegebene Name erscheint in der Playerliste.  &
+OK \\
+\hline
+Warten bis sich weitere Spieler angemeldet haben.  &
+Der Name der anderen Spieler erscheint in der Playerliste.  &
+OK  \\
+\hline
+Warten bis der Server das Spiel startet.  &
+Spielumgebung wird erstellt. Spielfelddaten werden "ubermittelt. Das Spielfeld wird angezeigt.
+  Wenn s"amtliche Spieler bereit sind wird das Spiel freigegeben.  &
+OK  \\
+\hline
+\end{tabular}
+
+\subsection{Spielen}
+
+\begin{tabular}{|p{50mm}|p{70mm}|p{20mm}|}
+\hline
+\textbf{Aktion} & \textbf{Erwartetes Ergebnis} & \textbf{Ergebnis}  \\
+
+\hline
+Mit den Pfeiltasten wird die Spielfigur auf den freien Feldern bewegt.  &
+Die eigene Spielfigur bewegt sich gem"ass den Anweisungen.  &
+OK  \\
+\hline
+Mit der Leertaste wird eine Bombe gelegt.  &
+Auf dem Spielfeld an der Position der Spielfigur wird eine Bombe angezeigt. &
+OK  \\
+\hline
+Die Bombe explodiert nach einer bestimmten Zeit von selbst.  &
+Auf dem Spielfeld wird der Feuerstrahl angezeigt. W"ande die vom Feuerstrahl getroffen werden, werden
+  gel"oscht. Der Feuerstrahl verschwindet von selbst wieder.  &
+OK  \\
+\hline
+Mehrere Bomben werden zeitlich versetzt nebeneinander gelegt.  &
+Die Explosion der ersten Bombe l"ost die anderen Bomben ebenfalls aus.  &
+OK  \\
+\hline
+Der andere Spieler bewegt seine Spielfigur und legt Bomben.  &
+Die Spielfigur des Gegners bewegt sich auf dem Spielfeld gem"ass den Anweisungen des Gegners auf dem anderen
+  Computer. Bomben werden angezeigt und explodieren. &
+OK  \\
+\hline
+Eine Spielfigur wird von einem Feuerstrahl getroffen.  &
+Die getroffene Spielfigur wird vom Spielfeld entfernt. Wenn nur noch ein Spieler auf dem Feld ist, erscheint
+  eine Meldung mit dem Namen des Siegers. Das Spiel wird beendet. &
+OK  \\
+\hline
+Der Server startet mit 'Spiel $\rightarrow$ Neues Spiel..' ein neues Spiel.  &
+Ein neues Spielfeld wird angezeiget. Alle Spieler sind wieder dabei und k"onnen mitspielen.  &
+OK  \\
+\hline
+\end{tabular}
+
+
+\subsection{Spiel beenden}
+
+\begin{tabular}{|p{50mm}|p{70mm}|p{20mm}|}
+\hline
+\textbf{Aktion} & \textbf{Erwartetes Ergebnis} & \textbf{Ergebnis}  \\
+\hline
+Ein Spieler (nicht der Server) schliesst seine Anwendung.  &
+Der Spieler wird beim Server abgemeldet und das Programm wird geschlossen. Die verbliebenen Spieler
+  erhalten eine Meldung, dass sich der Spieler abgemeldet hat. Der Name des Spielers verschwindet aus
+  der Playerliste.  &
+OK  \\
+\hline
+Der Spieler mit dem Server schliesst seine Anwendung.  &
+Der Server meldet sich bei allen Clients ab und das Programm wird geschlossen. Die verbliebenen Spieler
+  erhalten eine Meldung, dass sich der Server abgemeldet hat. S"amtliche Namen der Spieler verschwinden
+  aus der Playerlist.  &
+OK  \\
+\hline
+\end{tabular}
+
+
+\section{Varianten Spielablauf}
+
+\subsection{Spiel starten}
+
+\begin{tabular}{|p{50mm}|p{70mm}|p{20mm}|}
+\hline
+\textbf{Aktion} & \textbf{Erwartetes Ergebnis} & \textbf{Ergebnis}  \\
+\hline
+Spiel vom Konqueror aus starten.  &
+Spiel startet, GUI wird angezeigt.  &
+FAILED   \\
+ & & Das Spiel wird gestartet, die Grafiken f"ur das Spielfeld werden jedoch nicht gefunden. \\
+\hline
+Ein neuer Spieler versucht sich w"ahrend eines laufenden Spiels eine Verbindung aufzubauen.  &
+Der Spieler kann die Verbindung aufbauen, kann aber keinen Einfluss auf das laufende Spiel nehmen.
+  Beim n"achsten Spielstart spielt der Spieler auch mit.  &
+OK  \\
+\hline
+Ein Spieler gibt vor dem Anmelden am Server keinen Spielernamen ein.  &
+Er erscheint in der Playerliste als 'anonymous'.  &
+OK  \\
+\hline
+
+\end{tabular}
+
+
+\section{Fehlerf"alle}
+
+\begin{tabular}{|p{50mm}|p{70mm}|p{20mm}|}
+\hline
+\textbf{Aktion} & \textbf{Erwartetes Ergebnis} & \textbf{Ergebnis}  \\
+\hline
+Der Spieler gibt beim Verbinden mit einem Server eine ung"ultige IP ein. &
+Es wird eine Meldung ausgegeben, dass mit dem Server keine Verbindung aufgebaut werden konnte.  &
+OK  \\
+\hline
+Mitten im Spiel schliesst ein Spieler (nicht der Server) seine Anwendung.  &
+Die Figur des Spielers wird zerst"ort und verschwindet vom Spielfeld. Der Name des Spielers wird aus der
+  Playerliste entfernt. Das Spiel l"auft weiter.  &
+OK \\
+\hline
+Mitten im Spiel schliesst der Server seine Anwendung.  &
+Das Spiel wird beendet. Die verbliebenen Spieler erhalten eine Meldung, und s"amtliche Namen werden aus
+  der Playerliste gel"oscht.  &
+OK \\
+\hline
+\end{tabular}
+
+
+\chapter{Buglist}
+
+
+\begin{tabular}{|p{5mm}|p{60mm}|p{65mm}|p{10mm}|}
+\hline
+\textbf{Nr.} & \textbf{Fehlerbild} & \textbf{M"ogliche Ursache} & \textbf{Status}  \\
+\hline
+1 &
+Spielfiguren werden erst angezeigt wenn sie bewegt werden.  &
+Positionen der Figuren werden beim Spielfeldaufbau nicht "ubermittelt.  &
+FIXED  \\
+\hline
+2 &
+Wenn ein Spieler die Verbindung abbricht wird der Name in der Playerliste nicht gel"oscht.  &
+Im GUI wird auf das 'removePlayer' Ereigniss nicht reagiert.  &
+FIXED  \\
+\hline
+3 &
+Wenn das Programm beendet wird muss ca. 30 - 60 Sekunden gewartet werden bis wieder ein Server gestartet
+  werden kann.  &
+Eventuell wird der verwendete Socket vom System nicht unmittelbar freigegeben.  &
+ \\
+\hline
+4 &
+Wenn das Spiel vom Konqueror aus gestartet wird, wird das Spielfeld nicht angezeigt.
+  Das Spiel funktioniert sonst normal.  &
+Die Grafiken der W"ande, Mauern, etc. k"onnen nicht geladen werde. Eventuell falscher Arbeitspfad.  &
+ \\
+\hline
+
+
+\end{tabular}
+
+
+%\end{document}

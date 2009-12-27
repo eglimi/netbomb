@@ -1,0 +1,131 @@
+<!DOCTYPE UI><UI>
+<class>gserverform</class>
+<widget>
+    <class>QWidget</class>
+    <property stdset="1">
+        <name>name</name>
+        <cstring>gserverform</cstring>
+    </property>
+    <property stdset="1">
+        <name>geometry</name>
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>239</width>
+            <height>183</height>
+        </rect>
+    </property>
+    <property stdset="1">
+        <name>caption</name>
+        <string>Server starten</string>
+    </property>
+    <widget>
+        <class>QPushButton</class>
+        <property stdset="1">
+            <name>name</name>
+            <cstring>bStarten</cstring>
+        </property>
+        <property stdset="1">
+            <name>geometry</name>
+            <rect>
+                <x>30</x>
+                <y>140</y>
+                <width>80</width>
+                <height>26</height>
+            </rect>
+        </property>
+        <property stdset="1">
+            <name>text</name>
+            <string>&amp;Starten</string>
+        </property>
+    </widget>
+    <widget>
+        <class>QPushButton</class>
+        <property stdset="1">
+            <name>name</name>
+            <cstring>bCancel</cstring>
+        </property>
+        <property stdset="1">
+            <name>geometry</name>
+            <rect>
+                <x>130</x>
+                <y>140</y>
+                <width>80</width>
+                <height>26</height>
+            </rect>
+        </property>
+        <property stdset="1">
+            <name>text</name>
+            <string>&amp;Abbrechen</string>
+        </property>
+    </widget>
+    <widget>
+        <class>QGroupBox</class>
+        <property stdset="1">
+            <name>name</name>
+            <cstring>GroupBox3</cstring>
+        </property>
+        <property stdset="1">
+            <name>geometry</name>
+            <rect>
+                <x>10</x>
+                <y>10</y>
+                <width>220</width>
+                <height>110</height>
+            </rect>
+        </property>
+        <property stdset="1">
+            <name>title</name>
+            <string>Server Optionen</string>
+        </property>
+        <widget>
+            <class>QLabel</class>
+            <property stdset="1">
+                <name>name</name>
+                <cstring>TextLabel6</cstring>
+            </property>
+            <property stdset="1">
+                <name>geometry</name>
+                <rect>
+                    <x>10</x>
+                    <y>40</y>
+                    <width>120</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property stdset="1">
+                <name>text</name>
+                <string>Max. Anzahl Spieler:</string>
+            </property>
+        </widget>
+        <widget>
+            <class>QSpinBox</class>
+            <property stdset="1">
+                <name>name</name>
+                <cstring>maxAnzahlField</cstring>
+            </property>
+            <property stdset="1">
+                <name>geometry</name>
+                <rect>
+                    <x>140</x>
+                    <y>40</y>
+                    <width>56</width>
+                    <height>23</height>
+                </rect>
+            </property>
+            <property stdset="1">
+                <name>maxValue</name>
+                <number>4</number>
+            </property>
+            <property stdset="1">
+                <name>minValue</name>
+                <number>2</number>
+            </property>
+            <property>
+                <name>toolTip</name>
+                <string>Als Server bestimmen Sie die maximale Teilnehmeranzahl</string>
+            </property>
+        </widget>
+    </widget>
+</widget>
+</UI>

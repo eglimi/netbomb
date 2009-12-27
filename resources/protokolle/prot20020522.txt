@@ -1,0 +1,26 @@
+Protokoll 22.5.02 (Nachträglich verfasst)
+=================
+
+
+Allgemeine Info
+===============
+
+Dokumentation wird von jedem selber angepasst
+Location: wg.dns2go.biz
+login:netbomb passwort:{unser admin pw}
+
+Zu Erledigen
+============
+
+- [STEK] CVS Upload {DONE}
+- [STEK] Taskbenennung aktualisieren/überprüfen {OPEN}
+- [STEK] Zeitplan für Iteration 2, Aufwände schätzen {OPEN}
+- [STEK] Leeres Rapport Sheet für Büro {DONE}
+- [REH] UCs der It 2 anhand Fkt. {CANCELED, OVERLOAD}
+- [REH] Schnittstellen Implementation {DONE}
+- [UHEI] PDKontroller {OPEN}
+- [MIE] Netzwerk Klassendiagramm {OPEN}
+- [REH/MIE] Abklären der Schnittstelle {DONE}
+
+
+

@@ -1,0 +1,89 @@
+\documentclass[a4paper]{report}
+%Pakete auswaehlen
+\usepackage{german}
+\usepackage[latin1]{inputenc}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{graphics}
+\usepackage{hyperref}
+\usepackage{here}
+
+%idex erstellen
+\usepackage{makeidx}
+\makeindex
+\selectlanguage{german}
+
+%page layout festlegen
+\setlength{\parindent}{1.5em}
+\setlength{\headheight}{16mm}
+\setlength{\voffset}{-15mm}
+\setlength{\hoffset}{-14mm}
+\setlength{\textwidth}{150mm}
+\setlength{\textheight}{220mm}
+
+
+\pagestyle{fancy}
+\lhead{\rotatebox{270}{\includegraphics[width=1cm]{./images/HSR.pdf}}\vspace{0.6mm}}
+\renewcommand{\chaptermark}[1]{\markboth{\MakeUppercase{\chaptername\ \thechapter.\ #1}}{}}
+\rhead{\leftmark}
+
+\pagenumbering{arabic}
+
+
+% Attribute für das PDF-Dokument
+\hypersetup{
+	pdftitle = {Dokumentation Bomberman},
+	pdfsubject = {Dokumentation Bomberman},
+	pdfkeywords = {Bomberman},
+	pdfauthor = {Michael Egli, michael.egli@hsr.ch},
+}
+
+\newcommand{\highlight}[1]{\emph{#1}}
+\newcommand{\command}[1]{\texttt{#1}}
+
+
+\begin{document}
+
+%titelseite erstellen
+\begin{titlepage}
+	\begin{center}
+                {\huge Dokumentation \textsc{NetBomb}} \vspace{10mm}\\
+		{\large
+                  \href{mailto:stefan.kuenzle@hsr.ch}{Stefan K"unzle} $<$stefan.kuenzle@hsr.ch$>$ \\
+                  \href{mailto:rene.hermann@hsr.ch}{Ren\'e Herrmann} $<$rene.hermann@hsr.ch$>$ \\
+                  \href{mailto:michael.egli@hsr.ch}{Michael Egli} $<$michael.egli@hsr.ch$>$ \\
+                  \href{mailto:urs.heimann@hsr.ch}{Urs Heimann} $<$urs.heimann@hsr.ch$>$ \vspace{5mm} \\
+                Betreuer: Daniel Keller \\ \vspace{10mm}
+	 	Erstellt am \today \vspace{140mm}} \\
+	        {\small Typesetting by \LaTeX\ }
+
+	\end{center}
+\end{titlepage}
+
+\tableofcontents
+
+\part{Iteration 1}
+\input{./it1/vision}
+\input{./it1/anforderungsspezifikation}
+\input{./it1/supplementary}
+\input{./it1/domainanalyse}
+\input{./it1/softwarearchitektur}
+\input{./it1/designmodell}
+
+\part{Iteration 2}
+% keine Vision notwendig für Iteration 2
+% \input{./it2/vision}
+\input{./it2/anforderungsspezifikation}
+\input{./it2/supplementary}
+\input{./it2/domainanalyse}
+\input{./it2/softwarearchitektur}
+\input{./it2/designmodell}
+\input{./it2/testdoku}
+\input{./it2/bedienungsanleitung}
+
+\begin{appendix}
+\input{./glossar}
+\input{./aenderungsgeschichte}
+\end{appendix}
+
+\end{document}
